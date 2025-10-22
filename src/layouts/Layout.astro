@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Animations</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
@@ -37,3 +37,15 @@
 		margin: 0.5rem 0;
 	}
 </style>
+
+<script>
+// silly title animation
+const DELAY_MS = 200
+const titleEl = document.querySelector("title")
+let counter = 1
+const titleWord = "Animations 😃"
+setInterval(() => {
+	titleEl.innerHTML = titleWord.substr(0, 1 + counter % (titleWord.length))
+	counter++
+}, DELAY_MS)
+</script>
