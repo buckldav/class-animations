@@ -1,0 +1,18 @@
+document.addEventListener('DOMContentLoaded', function() {
+	// Function to check if the window is in an iframe
+	function isInIframe() {
+		try {
+			return window.self !== window.top;
+		} catch (e) {
+			return true; // If there's an error, assume we're in an iframe
+		}
+	}
+
+	const navbar = document.querySelector('nav');
+
+	// Check if in an iframe and hide the navbar if true
+	if (isInIframe()) {
+		navbar.style.display = 'none'; // Hide the nav
+	}
+});
+

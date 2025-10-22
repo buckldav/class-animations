@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout>
+    <div class="box">
+        Arrgh, Matey!
+    </div>
+</Layout>
+
+<style>
+/* css goes here */
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+      opacity: 0.25;
+    }
+    to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+
+  .box {
+    font-size: 5rem;
+    position: absolute;
+    top: 4rem;
+    right: 50vw;
+    translate: transformX(-50%);
+    animation: slide-in 1000ms;
+    animation-iteration-count: 3;
+  }
+</style>
+
+<script>
+// js goes here
+</script>
+
+<script is:inline src="/iframe-hide.js"></script>
