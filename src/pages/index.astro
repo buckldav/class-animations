@@ -7,5 +7,52 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<Welcome />
+<div class="container">
+	<h1>Animations</h1>
+	<p>Yarr. Here be the animations of the class.</p>
+	<br>
+
+	<div class="grid">
+		<a href="/brigham" class="card"><iframe frameborder="0" src="/brigham" width="200" height="120"></iframe></a>
+		<a href="/david" class="card"><iframe frameborder="0" src="/david" width="200" height="120"></iframe></a>
+		<a href="/luke" class="card"><iframe frameborder="0" src="/luke" width="200" height="120"></iframe></a>
+		<a href="/owen" class="card"><iframe frameborder="0" src="/owen" width="200" height="120"></iframe></a>
+		<a href="/parker" class="card"><iframe frameborder="0" src="/parker" width="200" height="120"></iframe></a>
+	</div>
+</div>
 </Layout>
+
+<style>
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1rem;
+	max-width: 650px;
+	margin: 0 auto;
+}
+.grid iframe {
+    border-radius: 0.5rem;
+    overflow: hidden; /* Optional: hide overflow if necessary */
+}
+.card {
+    position: relative; /* Make sure the parent has positioning context */
+    overflow: hidden; /* Prevent overflow of the overlay */
+    width: 200px; /* Example width */
+    height: 140px; /* Example height */
+    background-color: white; /* Background color of the card */
+    border-radius: 10px; /* Optional: for rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: shadow for depth */
+}
+
+.card::after {
+    content: ""; /* Necessary for the pseudo-element */
+    position: absolute; /* Positioning it relative to .card */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Stretch to the right */
+    bottom: 0; /* Stretch to the bottom */
+    background-color: rgba(9, 137, 137, 0.5); /* Use RGBA for transparency */
+    z-index: 1; /* Ensure it’s behind any text/content */
+}
+</style>
