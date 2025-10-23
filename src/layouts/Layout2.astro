@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Animations</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+	<nav>
+		<a href="/">Home</a>
+		<a href="/brigham">Brigham</a>
+		<a href="/david">David</a>
+		<a href="/luke">Luke</a>
+		<a href="/owen">Owen</a>
+		<a href="/parker">Parker</a>
+	</nav>
+		</div>
+			<slot />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+	nav {
+		justify-content: center;
+		display: flex;
+		gap: 1rem;
+		margin: 0.5rem 0;
+	}
+</style>
+
+<script>
+// silly title animation
+const DELAY_MS = 200
+const titleEl = document.querySelector("title")
+let counter = 1
+const titleWord = "A Boating"
+setInterval(() => {
+	titleEl.innerHTML = titleWord.substr(0, 1 + counter % (titleWord.length))
+	counter++
+}, DELAY_MS)
+</script>

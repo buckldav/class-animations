@@ -1,14 +1,184 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout2 from "../layouts/Layout2.astro"
 ---
 
-<Layout>
-	<small>Animation goes here :)))</small>
-</Layout>
+<Layout2>
+	<body>
+	<div class="box"> 
+		Hi there, I are Boating!
+	</div><br>
+	<div class="box2">
+		<pre>
+  __|__ |___| |\
+  |o__| |___| | \
+  |___| |___| |o \
+ _|___| |___| |__o\
+/...\_____|___|____\_/<u>
+\   o * o * * o o  / </u>
+
+		</pre>
+	</div>
+	<div class="water">
+		
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			
+</div>
+</body>
+
+</Layout2>
 
 <style>
-/* css goes here */
+
+@keyframes rotate-in {
+	0% {
+		transform: translateX(-100%) rotate(12turn);
+		color: brown;
+		opacity: 5;
+	}
+	50% {
+		transform: translateX(0%) rotate(25turn);
+		color: rgb(255, 255, 255);
+		opacity: 1;
+
+
+	}
+		70% {
+		transform: translateX(0%) rotate(25turn);
+		color: rgb(255, 255, 255);
+		opacity: 1;
+
+
+	}
+	100% {
+		transform: translateX(0%) rotate(25turn);
+		color: rgb(0, 0, 0);
+		opacity: 1;
+
+
+	}
+
+}
+@keyframes sccccccccccccale-in {
+	0% {
+		transform: translateX(-100%) rotate(2turn);
+		color: brown;
+		font-weight:10;
+		opacity: 5;
+		font-size: xx-small;
+
+	}
+	50% {
+		transform: translateX(0%) rotate(1turn);
+		color: rgb(255, 255, 255);
+		opacity: 1;
+		font-weight:1000;
+		font-size: xx-large;
+
+
+
+	}
+		70% {
+		transform: translateX(0%) rotate(1turn);
+		color: rgb(255, 255, 255);
+		opacity: 1;
+		font-weight:1000;
+		font-size: xx-large;
+
+
+
+
+	}
+	100% {
+		transform: translateX(0%) rotate(25turn);
+		color: rgb(0, 0, 0);
+		opacity: 1;
+		font-weight:1;
+		font-size: xx-small;
+
+
+
+
+	}
+
+}
+@keyframes water-in {
+	0% {
+		transform: translateX(-100%);
+		color: #002fff;
+		font-weight:1000;
+		opacity: 1;
+		font-size: xx-large;
+
+	}
+	50% {
+		transform: translateX(-50%);
+		color: #002fff;
+		opacity: 1;
+		font-weight:1000;
+		font-size: xx-large;
+
+
+
+	}
+		70% {
+		transform: translateX(0%);
+		color: #002fff;
+		opacity: 1;
+		font-weight:1000;
+		font-size: xx-large;
+
+
+
+
+	}
+	100% {
+		transform: translateX(50%);
+		color: #002fff;
+		opacity: 1;
+		font-weight:1000;
+		font-size: xx-large;
+
+
+
+
+	}
+
+}
+
+body {background-color: black;}
+
+.box {
+	/* font-size: 5rem; */
+    position: absolute;
+    top: 4rem;
+    right: 50vw;
+    translate: transformX(-50%);
+	animation: rotate-in 1000ms;
+	animation-iteration-count: infinite;
+}
+.box2 {
+	/* font-size: 5rem; */
+    position: absolute;
+    top: 15rem;
+    right: 50vw;
+    translate: transformX(-50%);
+	animation: sccccccccccccale-in 1000ms;
+	animation-iteration-count: infinite;
+}
+.water {
+	position: relative;
+	top: 55rem;
+    right: 50vw;
+    translate: transformX(-50%);
+	animation: 1s infinite alternate water-in;
+	animation-iteration-count: infinite;
+}
+
+
+
 </style>
+
+
 
 <script>
 // js goes here
