@@ -16,7 +16,7 @@ import Layout from '../layouts/Layout.astro';
 
 	<div class="grid">
 		<a href="/brigham" class="card"><iframe frameborder="0" src="/brigham" width="400" height="280"></iframe></a>
-		<a href="/david" class="card"><iframe frameborder="0" src="/david" width="400" height="280"></iframe></a>
+		<a href="/david" class="davidscard"><iframe frameborder="0" src="/david" width="400" height="280"></iframe></a>
 		<a href="/luke" class="card"><iframe frameborder="0" src="/luke" width="400" height="280"></iframe></a>
 		<a href="/owen" class="card"><iframe frameborder="0" src="/owen" width="400" height="280"></iframe></a>
 		<a href="/parker" class="card"><iframe frameborder="0" src="/parker" width="400" height="280"></iframe></a>
@@ -47,6 +47,27 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .card::after {
+    content: ""; /* Necessary for the pseudo-element */
+    position: absolute; /* Positioning it relative to .card */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Stretch to the right */
+    bottom: 0; /* Stretch to the bottom */
+    background-color: rgba(9, 137, 137, 0.5); /* Use RGBA for transparency */
+    z-index: 1; /* Ensure it’s behind any text/content */
+}
+
+.davidscard {
+    position: relative; /* Make sure the parent has positioning context */
+    overflow: hidden; /* Prevent overflow of the overlay */
+    width: 360px; /* Example width */
+    height: 280px; /* Example height */
+    background-color: white; /* Background color of the card */
+    border-radius: 10px; /* Optional: for rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: shadow for depth */
+}
+
+.davidscard::after {
     content: ""; /* Necessary for the pseudo-element */
     position: absolute; /* Positioning it relative to .card */
     top: 0; /* Align to the top */
