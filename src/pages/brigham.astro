@@ -3,11 +3,88 @@ import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout>
-	<small>Animation goes here :)))</small>
+	<small class="sneeze">ACHOO!!!!</small>
+	<img class="sneezeIMG" height="50px" width="50px" src="https://images.newscientist.com/wp-content/uploads/2020/04/22170110/c_keithmorris_alamy_web.jpg">
+	<p class="afterSneeze">God bless you</p>
 </Layout>
 
 <style>
-/* css goes here */
+@keyframes sneeze {/*sneeze=open page*/ 
+	0%{
+		transform: translateX(-1000%) rotate(0turn);
+		opacity: 0;
+		color:red;
+		
+	}
+	16% {
+		transform: translateX(-500%) rotate(1turn);
+		opacity: 1;
+		
+	}
+	33%{
+		transform: translateX(0%) rotate(2turn);
+		opacity: 0.5;
+		color:green;
+		
+	}
+	
+}
+@keyframes afterSneeze {/*sneeze=open page*/ 
+	0%{
+		transform: translateX(-1000%);
+		opacity: 0;
+		
+	}
+	16%{
+		transform: translateX(-1000%);
+		opacity: 0;
+		
+	}
+	33%{
+		transform: translateX(-1000%);
+		opacity: 0;
+		
+	}
+	50% {
+		transform: translateX(-500%);
+		opacity: 1;
+	}
+	100%{
+		transform: translateX(0%);
+		opacity: 0.5;
+		
+	}
+	
+}
+
+.sneeze{
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	animation: sneeze 6000ms;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	
+}
+
+.sneezeIMG{
+	position: absolute;
+	top: 40%;
+	left: 110%;
+	animation: sneeze 6000ms;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	
+}
+
+.afterSneeze{
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	animation: afterSneeze 6000ms;
+	/*animation-delay: 2000ms;*/
+	animation-iteration-count: infinite;
+}
 </style>
 
 <script>
