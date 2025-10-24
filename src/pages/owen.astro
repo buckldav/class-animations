@@ -3,15 +3,67 @@ import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout>
-	<small>Animation goes here :)))</small>
+	<small class="box">Animation goes here :)))</small>
+	<h1 class="silly">  <pre>
+    __|__ |___| |\
+    |o__| |___| | \
+    |___| |___| |o \
+   _|___| |___| |__o\
+  /...\_____|___|____\_/
+  \   o * o * * o o  / </pre></h1>
 </Layout>
 
+<img class="silly pic"src="https://i.ytimg.com/vi/0IyZt2Yj29M/maxresdefault.jpg" height="500px" width="200">
+
 <style>
-/* css goes here */
+   @keyframes fancy-spin {
+    0% {
+      transform: rotate(0turn) scale(1);
+    }
+    25% {
+      transform: rotate(1.89turn) scale(1);
+    }
+    50% {
+      transform: rotate(1.555turn) scale(1.5);
+    }
+    75% {
+      transform: rotate(0turn) scale(1.5);
+    }
+    100% {
+      transform: rotate(10turn) scale(1);
+    }
+}
+	.box { animation:fancy-spin 10ms; 
+		position:absolute;
+		top:50vh;
+		left:50vw;
+		animation-iteration-count:infinite;
+  }
+  
+  .spinner {
+    animation: fancy-spin 20s;
+    animation-iteration-count: infinite;
+  }
+  .silly {
+	animation:fancy-spin 100000ms;
+	position: absolute;
+	animation-iteration-count: infinite;
+  }
 </style>
 
 <script>
-// js goes here
+const el: HTMLElement =document.querySelector(".silly")!
+setInterval(() => {
+el.style.top = Math.random() * 1000 + "px"
+el.style.left = Math.random() * 1000 + "px"
+}, 10)
+
+const el2: HTMLElement =document.querySelector(".pic")!
+setInterval(() => {
+el2.style.top = Math.random() * 1000 + "px"
+el2.style.left = Math.random() * 1000 + "px"
+}, 10)
+
 </script>
 
 <script is:inline src="/iframe-hide.js"></script>
